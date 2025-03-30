@@ -153,7 +153,7 @@ class VotingBot:
                 f"✅ **Голосование создано!** (ID: `{voting_id}`)\n\n"
                 f"**Вопрос:** {question}\n\n"
                 f"**Варианты:**\n{choices_text}\n\n"
-                f"Чтобы проголосовать: `/vote vote {voting_id} номер_варианта`"
+                f"Чтобы проголосовать: `!vote vote {voting_id} номер_варианта`"
             )
             
             self.send_message(channel_id, response)
@@ -178,9 +178,9 @@ class VotingBot:
                 "❌ Ошибка создания голосования:\n"
                 f"{str(e)}\n\n"
                 "**Правильный формат:**\n"
-                "`/vote create -q=\"Ваш вопрос\" -c=\"Вариант 1, Вариант 2, Вариант 3\"`\n\n"
+                "`!vote create -q=\"Ваш вопрос\" -c=\"Вариант 1, Вариант 2, Вариант 3\"`\n\n"
                 "**Пример:**\n"
-                "`/vote create -q=\"Какой язык лучше?\" -c=\"Python, Go, C++, JavaScript\"`"
+                "`!vote create -q=\"Какой язык лучше?\" -c=\"Python, Go, C++, JavaScript\"`"
             )
             self.send_message(channel_id, error_message)
 
@@ -257,7 +257,7 @@ class VotingBot:
         logger.debug(f"Vote args: {args}")
 
         if len(args) != 2:
-            self.send_message(channel_id, "Формат: /vote vote ID номер")
+            self.send_message(channel_id, "Формат: !vote vote ID номер")
             return
         
         voting_id, option = args
@@ -306,7 +306,7 @@ class VotingBot:
         if len(args) != 1:
             self.send_message(
                 channel_id,
-                "Использование: /vote results <ID_голосования>"
+                "Использование: !vote results <ID_голосования>"
             )
             return
         
@@ -358,7 +358,7 @@ class VotingBot:
         if len(args) != 1:
             self.send_message(
                 channel_id,
-                "Использование: /vote end <ID_голосования>"
+                "Использование: !vote end <ID_голосования>"
             )
             return
         
@@ -401,7 +401,7 @@ class VotingBot:
         if len(args) != 1:
             self.send_message(
                 channel_id,
-                "Использование: /vote delete <ID_голосования>"
+                "Использование: !vote delete <ID_голосования>"
             )
             return
         

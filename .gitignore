@@ -1,1 +1,5 @@
 .env
+mattermost/*
+postgres/*
+tarantool/*
+bot/voting_bot.log
