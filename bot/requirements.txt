@@ -1,0 +1,2 @@
+mattermostdriver==7.3.2
+tarantool==1.2.0
